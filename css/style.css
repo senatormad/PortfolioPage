@@ -1,0 +1,553 @@
+body {
+  margin: 0 auto;
+  font-family: 'Ubuntu Mono', monospace;
+  background-color: #181818;
+  color: #fff;
+  text-align: center;
+  padding: 0 0 2em 0;
+
+}
+
+header {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 2em;
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 3em;
+  padding: 10px;
+  padding-top: 0.4em;
+  margin-top: 0;
+  margin-bottom: 0;
+  text-transform: uppercase;
+
+
+}
+
+h2 {
+  font-weight: 400;
+  font-size: 1.5em;
+  padding: 0;
+  margin: 0;
+}
+
+h2 span {
+  filter: grayscale(50%);
+}
+
+.console-container {
+  font-size:4em;
+  text-align:center;
+  height:200px;
+  width:600px;
+  display:block;
+  position:absolute;
+  color:white;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+  margin:auto;
+}
+.console-underscore {
+   display:inline-block;
+  position:relative;
+  top:-0.14em;
+}
+
+img.profile-pic {
+  border-radius: 50%;
+  margin: 1.5em 1em 0em 1em;
+  height: 250px;
+  filter: grayscale(50%);
+}
+
+section {
+  padding: 1.5em 0.2em 2.5em 0.2em;
+}
+
+section h3 {
+  font-weight: 400;
+  font-size: 1.8em;
+  padding: 0 0 .6em 0;
+  margin: 0;
+  text-decoration: underline;
+}
+
+section span {
+  font-size: 2em;
+  cursor: pointer;
+  line-height: 1.2em;
+  margin: 10px 10px 0 10px;
+}
+
+section.social a, section.social.inFooter a {
+  color: unset;
+  cursor: unset;
+  text-decoration: unset;
+  display: inline-block;
+}
+
+@keyframes socialClick {
+  0% { opacity: 1; font-size: 2.5em; }
+  50% { opacity: 0.8; font-size: 2.2em; }
+  100% { opacity: 1; font-size: 2.5em; }
+}
+
+section.social a:active span{
+  animation: .2s socialClick;
+}
+
+
+section.skills span {
+  display: inline-block;
+}
+
+section.skills span.resetSkills {
+  font-style: italic;
+}
+
+section.skills span:active {
+  /* background-image: linear-gradient( 60deg, #F8B8B3 10%, #F7FDAF 10% 30%, #AAF3A2 30% 50%, #92DEFC 50% 70%, #AEC5F1 70% 90%, #B1A7F0 90%); */
+  background-image: linear-gradient( 60deg, #F8B8B3, #F7FDAF 10%, #AAF3A2 30%, #92DEFC 50%, #AEC5F1 70%, #B1A7F0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-repeat: repeat-x;
+  background-size: 420px;
+
+}
+
+section.skills span:focus {
+  background-image: linear-gradient( 60deg, #F8B8B3, #F7FDAF 10%, #AAF3A2 30%, #92DEFC 50%, #AEC5F1 70%, #B1A7F0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-repeat: repeat-x;
+  background-size: 420px;
+
+}
+
+section.works a:-webkit-any-link {
+    color: unset;
+    cursor: unset;
+    text-decoration: unset;
+}
+
+section.works article {
+  margin-top: 2em;
+  border: 2px solid #828282;
+  padding: 3em 2em 3em 2em;
+
+}
+
+section.works article:hover {
+  cursor: pointer;
+  outline: unset;
+  border: 2px solid transparent;
+  border-image: linear-gradient(to bottom right, #b827fc 0%, #2c90fc 25%, #b8fd33 50%, #fec837 75%, #fd1892 100%);
+  border-image-slice: 1;
+  filter: grayscale(50%);
+  }
+
+section.works article div h4 {
+  font-weight: 400;
+  font-size: 1.8em;
+  margin: 1em 0 1em 0;
+  text-decoration: underline;
+}
+
+section.works article div.leftDiv img {
+  width: 50%;
+  /* filter: grayscale(60%); */
+
+}
+
+section.works article div p {
+  font-size: 1.5em;
+
+}
+
+section.works p.commentImp, section.works p.commentOth {
+  color: #666666;
+  font-size: 1.2em;
+  margin: 0.5em 0.5em 1em 0.5em;
+}
+
+
+section.works article div p.commentImp, section.works article div p.commentOth {
+  color: #666666;
+  font-size: 1.4em;
+  margin: 1.3em 0 1em 0;
+}
+
+section.works article div.leftDiv {
+  width: 100%;
+}
+
+section.works article div.rightDiv {
+  display: none;
+}
+
+
+@font-face {
+    font-family: 'Ubuntu Mono', monospace;
+    src:    url('css/fonts/UbuntuMono-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'social-fonts';
+    src:  url('fonts/social-fonts.eot?sqkthl');
+    src:  url('fonts/social-fonts.eot?sqkthl#iefix') format('embedded-opentype'),
+    url('fonts/social-fonts.ttf?sqkthl') format('truetype'),
+    url('fonts/social-fonts.woff?sqkthl') format('woff'),
+    url('fonts/social-fonts.svg?sqkthl#social-fonts') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="social-fonts-"], [class*=" social-fonts-"] {
+  font-family: 'social-fonts' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  font-size: 2.5em;
+  cursor: pointer;
+  margin: 6px 15px 5px 15px;
+  display: inline-block;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[class^="social-fonts-"]:hover, [class*=" social-fonts-"]:hover {
+    cursor: pointer;
+}
+
+@keyframes spin {
+ 0% { transform: rotateY(0deg); }
+ 100% { transform: rotateY(360deg); }
+}
+
+.spintThatShit {
+  background-image: linear-gradient( 60deg, #F8B8B3, #F7FDAF 10%, #AAF3A2 30%, #92DEFC 50%, #AEC5F1 70%, #B1A7F0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-repeat: repeat-x;
+  background-size: 320px;
+  animation: spin 1s linear 0s alternate, blinkingText 2s infinite alternate;
+}
+
+.blinking {
+    background-image: linear-gradient( 60deg, #F8B8B3, #F7FDAF 10%, #AAF3A2 30%, #92DEFC 50%, #AEC5F1 70%, #B1A7F0);
+    /* background: linear-gradient( 45deg, #F8B8B3 10%, #F7FDAF 10% 30%, #AAF3A2 30% 50%, #92DEFC 50% 70%, #AEC5F1 70% 90%, #B1A7F0 90%); */
+    /* background: linear-gradient( 60deg, #EB6662 10%, #F7B172 10% 30%, #F7D37E 30% 50%, #82C881 50% 70%, #1D8F94 70% 90%, #203D85 90%); */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-repeat: repeat-x;
+    animation:blinkingText 3s infinite alternate;
+    background-size: 420px;
+}
+
+@keyframes blinkingText{
+  0% {
+		background-position: 0% 0%;
+	}
+	50% {
+		background-position: 100% 0%;
+	}
+	100% {
+		background-position: 0% 0%;
+	}
+}
+
+footer section.social {
+  opacity: 0;
+  transition: 1s opacity;
+}
+
+footer section.social.fadeQ {
+  opacity: 1;
+  transition: 1.2s opacity;
+}
+
+.social-fonts-github::before {
+    content: "\e902";
+}
+
+.social-fonts-mail01::before {
+    content: "\e900";
+
+}
+
+.social-fonts-linkedin::before {
+    content: "\e907";
+}
+
+.social-fonts-linkedin {
+    border-radius: 5px;
+    cursor: pointer;
+
+}
+
+.social-fonts-cvport::before {
+    content: "\e901";
+}
+
+
+.iconScrollContainer {
+  min-height: 70px;
+  width: 100%;
+}
+
+.icon-scroll {
+  position: relative;
+  width: 36px;
+  height: 70px;
+  box-shadow: inset 0 0 0 2px #fff;
+  border-radius: 25px;
+  animation-duration: 2.5s;
+  animation-iteration-count: 1;
+  animation-name: fadeIn;
+  opacity: 0.5;
+  margin: 0 auto;
+}
+
+.icon-scroll::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  width: 16px;
+  height: 16px;
+  background: #fff;
+  margin-left: -8px;
+  top: 45px;
+  border-radius: 100%;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-name: scroll;
+}
+
+@keyframes scroll {
+  0% { opacity: 0; }
+  50% { opacity: 0.5; }
+  100% { opacity: 0; transform: translateY(-36px); }
+}
+
+
+
+@keyframes  fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 0.5; }
+}
+
+.dotScrollBigScreen {
+  display: none;
+
+}
+
+
+
+.hide {
+  display: none;
+}
+
+@media only screen and (min-width: 375px) {
+  .iconScrollContainer {
+    padding: 2em 0 0 0;
+  }
+}
+
+
+@media only screen and (min-width: 920px) {
+  body {
+    font-size: 0.8rem;
+  }
+
+  h1 {
+    font-size: 5em;
+  }
+
+  h2 {
+    font-size: 2.5em;
+  }
+
+  section {
+    padding: 2.5em 0.2em 2.5em 0.2em;
+  }
+
+  section.skills, section.works {
+    margin: 0 auto;
+    max-width: 80%;
+  }
+
+  section h3 {
+    font-size: 3em;
+  }
+
+  section span {
+    font-size: 2.5em;
+  }
+
+  section.works p.commentImp, section.works p.commentOth {
+    font-size: 1.6em;
+  }
+
+  section.works article {
+    position: relative;
+  }
+  section.works article div.leftDiv {
+    position: relative;
+    height: 100%;
+  }
+  section.works article div.leftDiv img {
+    display: none;
+  }
+  section.works article div.leftDiv * {
+    width: 40%;
+  }
+  section.works article div.rightDiv {
+    display: inline-block;
+    width: 55%;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+
+  }
+
+  section.works article div.leftDiv div.rightDiv .previewImg {
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: top center;
+    filter: grayscale(50%);
+  }
+
+  section.works article div h4 {
+    margin: 0 0 1em 0;
+    font-size: 3em;
+
+  }
+
+  section.works article div p {
+      font-size: 1.8em;
+  }
+
+  section.skills span:hover {
+    background-image: linear-gradient(60deg, #b827fc 0%, #2c90fc 30%, #b8fd33 50%, #fec837 70%, #fd1892 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-repeat: repeat-x;
+    background-size: 150%;
+    filter: grayscale(50%);
+
+  }
+
+  section.skills span.resetSkills:hover {
+    font-style: italic;
+  }
+
+  [class^="social-fonts-"], [class*=" social-fonts-"] {
+    font-size: 4.5em;
+    margin: 6px 25px 5px 25px;
+
+  }
+
+  section.works article div.leftDiv div.rightDiv .previewImg.grayscaling {
+    filter: grayscale(0%);
+
+  }
+
+  .icon-scroll, .icon-scroll::before {
+    display: none;
+  }
+
+  .dotScrollBigScreen {
+    display: block;
+    content: '';
+    width: 10px;
+    height: 10px;
+    background: #fff;
+    margin: 1em auto;
+    border-radius: 100%;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+    animation-name: scrollBigScreen;
+    opacity: 0.1;
+
+  }
+
+  .dot1 {
+    animation-delay: 3s;
+  }
+
+  .dot2 {
+    animation-delay: 3.1s;
+
+  }
+
+  .dot3 {
+    animation-delay: 3.2s;
+
+  }
+  .dot4 {
+    animation-delay: 3.3s;
+
+  }
+
+  .dot5 {
+    display: none;
+
+  }
+  .dot6 {
+    display: none;
+
+  }
+
+  .iconScrollContainer {
+    min-height: 165px;
+  }
+
+
+
+  @keyframes scrollBigScreen {
+    0% { opacity: 0.1; }
+    25% { opacity: 0.8; }
+    50% { opacity: 0.1; }
+  }
+
+  @keyframes socialClick {
+    0% { opacity: 1; font-size: 4.5em; }
+    50% { opacity: 0.8; font-size: 4.2em; }
+    100% { opacity: 1; font-size: 4.5em; }
+  }
+
+}
+
+@media only screen and (min-width: 1367px) {
+  section.skills, section.works {
+    max-width: 65%;
+  }
+  .iconScrollContainer {
+    min-height: 165px;
+  }
+  .dot5 {
+    animation-delay: 3.4s;
+    display: block;
+
+  }
+  .dot6 {
+    animation-delay: 3.5s;
+    display: block;
+  }
+}
